@@ -16,31 +16,31 @@ public class Bot {
 
     public static void main(String[] args) throws Exception{
 
-        Scanner scan = new Scanner(System.in);
+        //Scanner scan = new Scanner(System.in);
 
         chooseMessage();
 
         JDA jda = JDABuilder.createDefault("NzUwMTk1MTk2OTQ3NTk1MzU1.X02_uA.RqazCazU993B0kWo8K1B4SBcHCI").build();
 
         Random rand = new Random();
-        for (int i =0; i<1; i--) {
+        for (;;) {
             chooseMessage();
             //864000000
-            //int sleepTime = rand.nextInt(840000);
-            //System.out.println(sleepTime);
-            String go = scan.next();
-            if (go != null) {
-                //Thread.sleep(sleepTime);
+            int sleepTime = rand.nextInt(100000000);
+            System.out.println(sleepTime);
+            //String go = scan.next();
+            //if (go != null) {
+                Thread.sleep(sleepTime);
                 List<TextChannel> channels = jda.getTextChannelsByName("incel-talk", true);
                 for (TextChannel ch : channels) {
                     sendMessage(ch, chooseMessage());
                 }
-            }
+            //}
         }
     }
 
     private static String chooseMessage() throws IOException {
-        Document document = Jsoup.connect("https://incels.co/forums/inceldom-discussion.2/").get();
+        Document document = Jsoup.connect("https://incels.is/forums/inceldom-discussion.2/").get();
         Elements withAttr = new Elements();
         for( Element element : document.getAllElements() )
         {
