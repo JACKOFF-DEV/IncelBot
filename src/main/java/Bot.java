@@ -18,12 +18,13 @@ public class Bot {
 
         //Scanner scan = new Scanner(System.in);
 
+        //weener
         chooseMessage();
 
         JDA jda = JDABuilder.createDefault("NzUwMTk1MTk2OTQ3NTk1MzU1.X02_uA.RqazCazU993B0kWo8K1B4SBcHCI").build();
 
         Random rand = new Random();
-        for (;;) {
+        while (true) {
             chooseMessage();
             //864000000
             int sleepTime = rand.nextInt(100000000);
